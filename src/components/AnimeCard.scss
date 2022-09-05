@@ -1,0 +1,18 @@
+.anime-card-container {
+    margin: 1%;
+}
+
+.anime-card {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.anime-card:hover {
+    background-color: lightgreen;
+    opacity: 0.8;
+
+}
