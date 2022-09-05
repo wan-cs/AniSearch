@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AniSearch/static/css/main.9cabe059.css",
+    "main.js": "/AniSearch/static/js/main.aaf9e348.js",
+    "index.html": "/AniSearch/index.html",
+    "main.9cabe059.css.map": "/AniSearch/static/css/main.9cabe059.css.map",
+    "main.aaf9e348.js.map": "/AniSearch/static/js/main.aaf9e348.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9cabe059.css",
+    "static/js/main.aaf9e348.js"
+  ]
+}
