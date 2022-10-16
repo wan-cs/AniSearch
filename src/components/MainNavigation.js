@@ -6,11 +6,14 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+// import { fade, makeStyles } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { SearchContext } from '../context/search';
+import { useState } from 'react';
 
-const Search = styled('div')(({ theme }) => ({
+const Search = styled('form')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -53,20 +56,24 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
+
     const navigate = useNavigate();
+    const search = useContext(SearchContext);
+    const [input, setInput] = useState('');
+    const handleSearch = (event) => {
+        event.preventDefault();
+        search.search(input).then((data) => {
+            search.setData(data.data);
+            localStorage.setItem('searchData', JSON.stringify(data.data));
+            setInput('');
+            navigate('/results');
+        })
+    }
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar sx={{ justifyContent: "space-between" }}>
-                    {/* <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        sx={{ mr: 2 }}
-                    >
-                        <MenuIcon />
-                    </IconButton> */}
                     <IconButton color="inherit" sx={{ mr: 2 }} onClick={() => {
                         navigate("/")
                     }}>
@@ -80,13 +87,15 @@ export default function SearchAppBar() {
                             AniSearch
                         </Typography>
                     </IconButton>
-                    <Search>
+                    <Search onSubmit={handleSearch}>
                         <SearchIconWrapper>
                             <SearchIcon />
                         </SearchIconWrapper>
                         <StyledInputBase
                             placeholder="Search…"
                             inputProps={{ 'aria-label': 'search' }}
+                            value={input}
+                            onChange={(event) => setInput(event.target.value)}
                         />
                     </Search>
                 </Toolbar>

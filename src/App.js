@@ -21,7 +21,7 @@ function App() {
   const search = (searchTerm) => {
     // TODO: upgrade to jikan v4 by October 2022
     return fetch(
-      `https://api.jikan.moe/v3/search/anime?q=${searchTerm}&limit=20`
+      `https://api.jikan.moe/v4/anime?q=${searchTerm}&limit=20&sfw`
     ).then(response => response.json());
   }
 

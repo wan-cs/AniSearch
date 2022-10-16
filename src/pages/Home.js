@@ -12,8 +12,9 @@ const Home = () => {
     const handleSearch = (event) => {
         event.preventDefault(); // don't want page to refresh on submit
         search.search(input).then((data) => {
-            search.setData(data.results);
-            localStorage.setItem('searchData', JSON.stringify(data.results));
+            // search.setData(data.results);
+            search.setData(data.data);
+            localStorage.setItem('searchData', JSON.stringify(data.data));
             navigate('/results');
         })
     }
