@@ -1,0 +1,15 @@
+FROM node:16
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+# copy source code to working dir
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+

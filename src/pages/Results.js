@@ -1,8 +1,8 @@
 import React, { useEffect, useContext, useState } from 'react';
 import AnimeList from '../components/AnimeList';
 import { SearchContext } from '../context/search';
-import { Box, Typography } from '@material-ui/core';
-import { Grid } from '@material-ui/core';
+import { Box, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 
 
 const Results = () => {

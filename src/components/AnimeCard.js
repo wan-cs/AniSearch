@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { SearchContext } from '../context/search';
 import { useNavigate } from 'react-router-dom';
-import { Typography, Link, Paper, ImageListItem, Grid } from '@material-ui/core';
+import { Typography, Link, Paper, ImageListItem, Grid } from '@mui/material';
 import "./AnimeCard.scss";
 
 const AnimeCard = (props) => {

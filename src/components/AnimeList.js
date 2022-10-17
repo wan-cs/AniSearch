@@ -1,10 +1,10 @@
 import React from 'react'
 import AnimeCard from './AnimeCard';
-import { ImageList } from '@material-ui/core';
+import { ImageList } from '@mui/material';
 
 const AnimeList = (props) => {
     return (
-        <ImageList className="card-list">
+        <ImageList variant="standard" cols={5} gap={1}>
             {props.data.map((anime) => {
                 return <AnimeCard key={anime.mal_id} anime={anime} />
             })}

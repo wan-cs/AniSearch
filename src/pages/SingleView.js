@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { SearchContext } from '../context/search';
-import { Typography } from '@material-ui/core';
+import { Typography } from '@mui/material';
 import SingleAnime from '../components/SingleAnime.js'
 
 const SingleView = () => {

@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../context/search';
-import { FormControl, Input, IconButton, Grid } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
+import { FormControl, Input, IconButton, Grid } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 import './Home.scss';
 
 const Home = () => {
